@@ -1,0 +1,27 @@
+@use "../abstracts";
+
+.form-card {
+    &__heading {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+
+        @include abstracts.screen(md) {
+            font-size: 1.8rem;
+        }
+    }
+
+    &__link {
+        display: flex;
+    }
+
+    &__label {
+        margin-bottom: 10px;
+    }
+
+    &__bottom {
+        margin-top: 30px;
+        display: flex;
+        justify-content: flex-end;
+    }
+}

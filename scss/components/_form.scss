@@ -1,0 +1,389 @@
+@use "../abstracts";
+
+$errorColor: #ed4337;
+
+.form {
+    &:has(:invalid) &__submit {
+        opacity: 0.5;
+        pointer-events: none;
+    }
+
+    &__row {
+        display: flex;
+        gap: 30px;
+
+        @include abstracts.screen(md) {
+            gap: 20px;
+        }
+
+        @include abstracts.screen(sm) {
+            flex-direction: column;
+            gap: 0;
+        }
+
+        > * {
+            flex: 1;
+        }
+    }
+
+    &__group {
+        margin-top: 30px;
+
+        &--inline {
+            display: flex;
+            align-items: center;
+        }
+
+        @include abstracts.screen(md) {
+            margin-top: 20px;
+        }
+    }
+
+    &__group:has(:invalid):has(&__input:not(:placeholder-shown)) {
+        .form__text-input {
+            border-color: $errorColor;
+            background-color: rgba($color: $errorColor, $alpha: 0.1);
+        }
+
+        .form__error,
+        .form__input-error-icon {
+            display: block;
+        }
+
+        .form__input-icon {
+            display: none;
+        }
+    }
+
+    &__mobile-heading {
+        font-size: 1.8rem;
+        padding: 20px 30px;
+        font-weight: 600;
+        text-align: center;
+    }
+
+    &__text-area,
+    &__text-input {
+        border-radius: 10px;
+        border: 1px solid var(--form-text-input-border);
+        display: flex;
+        align-items: center;
+        padding: 0 12px;
+
+        &--small {
+            border-radius: 8px;
+        }
+
+        &:focus-within {
+            border-color: #77dae6;
+        }
+    }
+
+    &__text-area {
+        height: 100px;
+        padding: 12px;
+
+        &-input {
+            width: 100%;
+            resize: none;
+        }
+    }
+
+    &__text-input {
+        position: relative;
+        height: 50px;
+
+        &--small {
+            height: 42px;
+        }
+
+        @include abstracts.screen(md) {
+            height: 48px;
+        }
+    }
+
+    &__input,
+    &__text-area-input {
+        flex: 1;
+        font-size: 1.8rem;
+        font-weight: 500;
+        line-height: 144.444%;
+        height: 100%;
+        width: 100%;
+
+        @include abstracts.screen(md) {
+            font-size: 1.6rem;
+        }
+
+        &::placeholder {
+            color: var(--form-input-color);
+            font-size: 1.8rem;
+            font-weight: 500;
+            line-height: 144.444%;
+
+            @include abstracts.screen(md) {
+                font-size: 1.6rem;
+            }
+        }
+    }
+
+    &__input {
+        &-icon {
+            margin-left: 12px;
+        }
+    }
+
+    &__select-dialog {
+        position: absolute;
+        bottom: 44px;
+        left: 10px;
+        z-index: 1;
+
+        display: flex;
+        flex-direction: column;
+
+        opacity: 0;
+        visibility: hidden;
+        translate: 0 10px;
+
+        transition: opacity, visibility, translate;
+        transition-duration: 0.2s;
+
+        max-height: 310px;
+        min-width: 230px;
+
+        padding-bottom: 10px;
+        border-radius: 10px;
+        border: 1px solid #d2d1d6;
+        background-color: var(--form-select-dialog-bg);
+        box-shadow: 0 0 5px var(--form-select-dialog-shadow);
+
+        &.show {
+            opacity: 1;
+            visibility: visible;
+            translate: 0;
+        }
+
+        @include abstracts.screen(sm) {
+            position: fixed;
+            inset: 0;
+            max-width: initial;
+            max-height: initial;
+            border-radius: 0;
+        }
+    }
+
+    &__search {
+        display: flex;
+        align-items: center;
+        flex-shrink: 0;
+
+        height: 38px;
+
+        border-bottom: 1px solid #d2d1d6;
+        padding: 0 20px;
+
+        @include abstracts.screen(sm) {
+            border: 1px solid #d2d1d6;
+            border-radius: 10px;
+            padding: 0;
+            margin: 10px 30px 0;
+            height: 42px;
+        }
+
+        &-input {
+            flex: 1;
+            height: 100%;
+            font-size: 1.6rem;
+
+            @include abstracts.screen(lg) {
+                height: 42px;
+            }
+
+            @include abstracts.screen(sm) {
+                padding-left: 14px;
+            }
+        }
+
+        &-icon {
+            width: 16px;
+            margin-left: 10px;
+
+            @include abstracts.screen(lg) {
+                width: 20px;
+            }
+
+            @include abstracts.screen(sm) {
+                margin: 0 14px;
+            }
+        }
+    }
+
+    &__options-list {
+        flex: 1;
+        margin-top: 10px;
+        overflow-y: auto;
+        overscroll-behavior: contain;
+
+        @supports (-webkit-touch-callout: none) {
+            padding-bottom: 3000px;
+        }
+    }
+
+    &__option {
+        font-size: 1.4rem;
+        padding: 8px 20px;
+
+        &--current {
+            background-color: rgba($color: #ffb700, $alpha: 0.6);
+        }
+
+        &:not(&--current):hover {
+            background-color: var(--form-select-option-hover-bg);
+            cursor: pointer;
+        }
+
+        @include abstracts.screen(lg) {
+            padding: 18px 30px;
+        }
+    }
+
+    &__error {
+        text-align: left;
+        margin-top: 10px;
+        color: $errorColor;
+        font-weight: 500;
+        display: none;
+        font-size: 1.4rem;
+    }
+
+    &__input-error-icon {
+        display: none;
+        margin-left: 12px;
+        animation: shake 0.5s;
+    }
+
+    &__pull-right {
+        margin-left: auto;
+    }
+
+    &__checkbox {
+        display: flex;
+        align-items: center;
+        position: relative;
+        padding-left: 29px;
+        user-select: none;
+
+        &-label {
+            color: var(--form--checkbox-label-color);
+            font-size: 1.5rem;
+            font-weight: 500;
+            line-height: 146.667%;
+
+            @include abstracts.screen(md) {
+                font-size: 1.4rem;
+            }
+        }
+
+        &::before,
+        &::after {
+            content: "";
+            position: absolute;
+        }
+
+        &::before {
+            left: 0;
+            width: 19px;
+            height: 19px;
+            border-radius: 5px;
+            border: 1px solid #9e9da8;
+        }
+    }
+
+    &__checkbox:has(:checked) {
+        &::before {
+            background-color: #ffb700;
+            border-color: #ffb700;
+        }
+
+        &::after {
+            left: 3px;
+            top: 6px;
+            width: 13px;
+            height: 6px;
+            border-left: 2px solid #fff;
+            border-bottom: 2px solid #fff;
+            rotate: -45deg;
+        }
+    }
+
+    &__label {
+        display: block;
+        font-size: 2.2rem;
+        font-weight: 500;
+        line-height: 145.455%;
+
+        &--medium {
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+            font-weight: 500;
+            line-height: 144.444%;
+        }
+
+        &--small {
+            font-size: 1.4rem;
+            line-height: 142.857%;
+            margin-bottom: 10px;
+        }
+    }
+
+    &__select-wrap {
+        border-radius: 6px;
+        border: 1px solid #d2d1d6;
+        height: 45px;
+        display: flex;
+        align-items: center;
+    }
+
+    &__select {
+        width: var(--width, 108px);
+        padding: 0 14px;
+        font-size: 1.4rem;
+        font-weight: 500;
+        line-height: 142.857%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: calc(100% - 10px);
+        cursor: pointer;
+
+        @include abstracts.screen(xl) {
+            flex: 1;
+        }
+    }
+
+    &__select + &__select {
+        border-left: 1px solid #d2d1d6;
+    }
+
+    &__tags {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 10px 20px;
+    }
+
+    &__tag {
+        color: #9e9da8;
+        font-weight: 500;
+        line-height: 142.857%;
+        padding: 6px 12px;
+        border-radius: 6px;
+        background: var(--form-tag-bg);
+        transition: 0.2s;
+
+        &:hover {
+            color: var(--text-color);
+        }
+    }
+}

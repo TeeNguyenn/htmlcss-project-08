@@ -1,0 +1,146 @@
+@use "../abstracts";
+
+html.dark {
+    --text-color: #fff;
+    --icon-color: brightness(0) saturate(100%) invert(100%) sepia(100%) saturate(0%) hue-rotate(288deg) brightness(102%)
+        contrast(102%);
+
+    --separate-bg: #292e39;
+
+    // Header
+    --header-bg-color: #171c28;
+    --header-product-page-bg: #171c28;
+    --body-bg-color: #292e39;
+
+    --top-act-group-bg-color: #292e39;
+    --top-act-group-shadow: rgba(0, 0, 0, 0.2);
+    --top-act-separate-color: #ededf6;
+    --top-act-user-img-shadow: rgba(0, 0, 0, 0.08);
+
+    --header-act-dropdown-bg: #2f343f;
+    --header-act-dropdown-shadow: rgba(23, 28, 40, 0.4);
+    --header-act-dropdown-bottom-border-color: #171c28;
+    --header-cart-preview-item-border-color: rgba(185, 186, 190, 0.5);
+
+    @include abstracts.screen(lg) {
+        --header-bg-color: rgba(0, 0, 0, 0.2);
+    }
+
+    // Footer
+    --footer-bg-color: var(--header-bg-color);
+    --footer-text-color: #9e9da6;
+
+    // dropdown
+    --dropdown-bg-color: #2f343f;
+    --dropdown-shadow: rgba(23, 28, 40, 0.4);
+    --dropdown-arrow-color: brightness(0) saturate(100%) invert(15%) sepia(80%) saturate(164%) hue-rotate(183deg)
+        brightness(90%) contrast(87%);
+    --top-menu-border-color: #171c28;
+    --menu-column-icon-color: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(7490%) hue-rotate(128deg)
+        brightness(92%) contrast(91%);
+
+    --menu-column-text-color: #b9babe;
+
+    // Sidebar
+    --sidebar-bg: #292e39;
+    --sidebar-shadow: rgba(23, 28, 40, 0.4);
+
+    // Category item
+    --cate-item-bg: #171c28;
+    --cate-item-thumb-bg: #292e39;
+    --cate-item-title-color: #fff;
+
+    // Buttons
+    --filter-btn-color: #fff;
+    --filter-btn-bg: #171c28;
+    --filter-btn-font-weight: 500;
+
+    --like-btn-bg: #292e39;
+    --like-btn-shadow: rgba(124, 124, 124, 0.2);
+
+    // Product card
+    --product-card-bg: #171c28;
+    --product-card-shadow: rgba(0, 0, 0, 0.2);
+
+    // Filter Form
+    --filter-form-bg: #2f343f;
+    --filter-form-shadow: 0px 40px 90px rgba(0, 0, 0, 0.4);
+    --form-tag-bg: #171c28;
+    --filter-form-arrow-up-color: var(--dropdown-arrow-color);
+
+    // Auth
+    --auth-intro-bg: #171c28;
+    --auth-content-bg: #292e39;
+    --auth-intro-text-color: #b9babe;
+    --auth-heading-color: #b9babe;
+    --auth-gmail-color: #b9babe;
+
+    // Forms
+    --form-text-input-border: #b9babe;
+    --form-input-color: #b9babe;
+    --form--checkbox-label-color: #9e9da8;
+
+    --form-select-dialog-bg: #2f343f;
+    --form-select-dialog-shadow: rgba($color: #fff, $alpha: 0.15);
+    --form-select-option-hover-bg: #292e39;
+
+    // Product Detail
+    --product-detail-bg: #292e39;
+
+    // Product Info
+    --prod-info-bg: #171c28;
+    --product-info-tag-bg: #292e39;
+
+    @include abstracts.screen(md) {
+        --product-detail-bg: #292e39;
+        --product-info-container-bg: #171c28;
+        --product-info-container-shadow: rgba(23, 28, 40, 0.2);
+        --prod-info-bg: #171c28;
+    }
+
+    // Breadcrumbs
+    --breadcrumbs-bg: #171c28;
+    --breadcrumbs-shadow: rgba(23, 28, 40, 0.2);
+
+    // Search bar
+    --search-bar-bg: #171c28;
+    --search-bar-input-color: #b9babe;
+
+    // Review card
+    --review-card-bg: #171c28;
+
+    // Text content
+    --text-content-hr-bg: #eeeeee2b;
+
+    // Checkout
+    --checkout-breadcrumbs-bg: #171c28;
+    --checkout-cart-info-bg: #171c28;
+    --checkout-cart-info-shadow: rgba(23, 28, 40, 0.2);
+    --checkout-cart-item-border-color: #292e39;
+
+    // Checkout > Payment Item
+    --payment-item-bg: #292e39;
+    --payment-item-thumb-shadow: rgba(23, 28, 40, 0.2);
+
+    // Gift Item
+    --gift-bg: #171c28;
+    --gift-shadow: rgba(23, 28, 40, 0.2);
+    --gift-icon-wrap-bg: #292e39;
+    --gift-icon-wrap-shadow: rgba(23, 28, 40, 0.2);
+
+    // Confirm Delete Dialog
+    --dialog-content-bg: #2f343f;
+    --dialog-content-shadow: rgba(23, 28, 40, 0.4);
+
+    // Profile
+    --profile-sidebar-bg: #171c28;
+    --profile-sidebar-shadow: rgba(23, 28, 40, 0.2);
+    --profile-menu-link-hover-color: #2f343f;
+
+    // Account info
+    --account-info-bg: #292e39;
+    --account-info-icon-bg: #171c28;
+
+    // Add new card
+    --new-card-bg: #2f343f;
+}

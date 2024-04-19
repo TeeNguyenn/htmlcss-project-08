@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en" class="">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Add new card | Grocery Mart</title>
+
+        <!-- Favicon -->
+        <link rel="apple-touch-icon" sizes="76x76" href="./assets/favicon/apple-touch-icon.png" />
+        <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon/favicon-32x32.png" />
+        <link rel="icon" type="image/png" sizes="16x16" href="./assets/favicon/favicon-16x16.png" />
+        <link rel="manifest" href="./assets/favicon/site.webmanifest" />
+        <link rel="mask-icon" href="./assets/favicon/safari-pinned-tab.svg" color="#5bbad5" />
+        <meta name="msapplication-TileColor" content="#da532c" />
+        <meta name="theme-color" content="#ffffff" />
+
+        <!-- Font -->
+        <link rel="stylesheet" href="./assets/fonts/stylesheet.css" />
+
+        <!-- Styles CSS -->
+        <link rel="stylesheet" href="./assets/css/main.css" />
+
+        <!-- Scripts -->
+        <script src="./assets/js/scripts.js"></script>
+    </head>
+    <body>
+        <!-- Header -->
+        <header id="header" class="header"></header>
+        <script>
+            load("#header", "./templates/header-logined.html");
+        </script>
+
+        <main class="profile">
+            <div class="container">
+                <!-- Search bar -->
+                <div class="profile__container search-bar d-none d-md-flex">
+                    <input type="text" class="search-bar__input" placeholder="Search for item" />
+                    <button class="search-bar__submit">
+                        <img src="./assets/icons/search.svg" alt="" class="search-bar__icon icon" />
+                    </button>
+                </div>
+
+                <!-- Profile content -->
+                <div class="profile__container">
+                    <div class="row g-3">
+                        <!-- User sidebar-->
+                        <div class="col-3 col-xl-4 d-lg-none">
+                            <aside class="profile__sidebar">
+                                <!-- User -->
+                                <div class="profile-user">
+                                    <img src="./assets/img/avatar.jpg" alt="" class="profile-user__img" />
+                                    <h1 class="profile-user__name">Tee Dev</h1>
+                                    <p class="profile-user__desc">Registered: 18th May 2024</p>
+                                </div>
+
+                                <!-- Menu 1 -->
+                                <div class="profile-menu">
+                                    <h3 class="profile-menu__heading">Manage Account</h3>
+                                    <ul class="profile-menu__list">
+                                        <li>
+                                            <a href="./edit-personal.html" class="profile-menu__link">
+                                                <span class="profile-menu__icon">
+                                                    <img
+                                                        src="./assets/icons/profile/user.svg"
+                                                        alt=""
+                                                        class="profile-menu__img icon"
+                                                    />
+                                                </span>
+                                                Personal info
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="" class="profile-menu__link">
+                                                <span class="profile-menu__icon">
+                                                    <img
+                                                        src="./assets/icons/profile/address.svg"
+                                                        alt=""
+                                                        class="profile-menu__img icon"
+                                                    />
+                                                </span>
+                                                Addresses
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="" class="profile-menu__link">
+                                                <span class="profile-menu__icon">
+                                                    <img
+                                                        src="./assets/icons/profile/message.svg"
+                                                        alt=""
+                                                        class="profile-menu__img icon"
+                                                    />
+                                                </span>
+                                                Communications & privacy
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <!-- Menu 2 -->
+                                <div class="profile-menu">
+                                    <h3 class="profile-menu__heading">My items</h3>
+                                    <ul class="profile-menu__list">
+                                        <li>
+                                            <a href="" class="profile-menu__link">
+                                                <span class="profile-menu__icon">
+                                                    <img
+                                                        src="./assets/icons/profile/download.svg"
+                                                        alt=""
+                                                        class="profile-menu__img icon"
+                                                    />
+                                                </span>
+                                                Reorder
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="" class="profile-menu__link">
+                                                <span class="profile-menu__icon">
+                                                    <img
+                                                        src="./assets/icons/favourite.svg"
+                                                        alt=""
+                                                        class="profile-menu__img icon"
+                                                    />
+                                                </span>
+                                                Lists
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="" class="profile-menu__link">
+                                                <span class="profile-menu__icon">
+                                                    <img
+                                                        src="./assets/icons/profile/gift.svg"
+                                                        alt=""
+                                                        class="profile-menu__img icon"
+                                                    />
+                                                </span>
+                                                Registries
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <!-- Menu 3 -->
+                                <div class="profile-menu">
+                                    <h3 class="profile-menu__heading">Subscriptions & plans</h3>
+                                    <ul class="profile-menu__list">
+                                        <li>
+                                            <a href="" class="profile-menu__link">
+                                                <span class="profile-menu__icon">
+                                                    <img
+                                                        src="./assets/icons/profile/protect.svg"
+                                                        alt=""
+                                                        class="profile-menu__img icon"
+                                                    />
+                                                </span>
+                                                Protection plans
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <!-- Menu 4 -->
+                                <div class="profile-menu">
+                                    <h3 class="profile-menu__heading">Customer Service</h3>
+                                    <ul class="profile-menu__list">
+                                        <li>
+                                            <a href="" class="profile-menu__link">
+                                                <span class="profile-menu__icon">
+                                                    <img
+                                                        src="./assets/icons/profile/info.svg"
+                                                        alt=""
+                                                        class="profile-menu__img icon"
+                                                    />
+                                                </span>
+                                                Help
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="" class="profile-menu__link">
+                                                <span class="profile-menu__icon">
+                                                    <img
+                                                        src="./assets/icons/profile/warning.svg"
+                                                        alt=""
+                                                        class="profile-menu__img icon"
+                                                    />
+                                                </span>
+                                                Terms of Use
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </aside>
+                        </div>
+
+                        <!-- Right block -->
+                        <div class="col-9 col-xl-8 col-lg-12">
+                            <div class="cart-info">
+                                <div class="row gy-3">
+                                    <!-- My wallet -->
+                                    <div class="col-12">
+                                        <h2 class="cart-info__heading form-card__heading">
+                                            <a href="./profile.html" class="form-card__link">
+                                                <img src="./assets/icons/left-arrow.svg" alt="" />
+                                            </a>
+                                            Add credit or debit card
+                                        </h2>
+
+                                        <form action="./profile.html" class="form form-card">
+                                            <!-- Form row 1 -->
+                                            <div class="form__row">
+                                                <div class="form__group">
+                                                    <label for="first-name" class="form__label form__label--medium"
+                                                        >First Name</label
+                                                    >
+                                                    <div class="form__text-input">
+                                                        <input
+                                                            type="text"
+                                                            name=""
+                                                            id="first-name"
+                                                            class="form__input"
+                                                            placeholder="First Name"
+                                                            required
+                                                            autofocus
+                                                        />
+                                                        <img
+                                                            src="./assets/icons/form-error.svg"
+                                                            alt=""
+                                                            class="form__input-error-icon"
+                                                        />
+                                                    </div>
+                                                    <p class="form__error">Please enter this field correctly</p>
+                                                </div>
+                                                <div class="form__group">
+                                                    <label for="last-name" class="form__label form__label--medium"
+                                                        >Last Name</label
+                                                    >
+                                                    <div class="form__text-input">
+                                                        <input
+                                                            type="text"
+                                                            name=""
+                                                            id="last-name"
+                                                            class="form__input"
+                                                            placeholder="Last Name"
+                                                            required
+                                                        />
+                                                        <img
+                                                            src="./assets/icons/form-error.svg"
+                                                            alt=""
+                                                            class="form__input-error-icon"
+                                                        />
+                                                    </div>
+                                                    <p class="form__error">Please enter this field correctly</p>
+                                                </div>
+                                            </div>
+                                            <!-- Form row 2 -->
+                                            <div class="form__row">
+                                                <div class="form__group">
+                                                    <label for="card-number" class="form__label form__label--medium"
+                                                        >Card Number</label
+                                                    >
+                                                    <div class="form__text-input">
+                                                        <input
+                                                            type="text"
+                                                            name=""
+                                                            id="card-number"
+                                                            class="form__input"
+                                                            placeholder="Card Number"
+                                                            required
+                                                        />
+                                                        <img
+                                                            src="./assets/icons/form-error.svg"
+                                                            alt=""
+                                                            class="form__input-error-icon"
+                                                        />
+                                                    </div>
+                                                    <p class="form__error">Please enter this field correctly</p>
+                                                </div>
+                                                <div class="form__group">
+                                                    <label for="expire" class="form__label form__label--medium"
+                                                        >Expiration Date</label
+                                                    >
+                                                    <div class="form__text-input">
+                                                        <input
+                                                            type="text"
+                                                            name=""
+                                                            id="expire"
+                                                            class="form__input"
+                                                            placeholder="MM/YY"
+                                                            required
+                                                        />
+                                                        <img
+                                                            src="./assets/icons/form-error.svg"
+                                                            alt=""
+                                                            class="form__input-error-icon"
+                                                        />
+                                                    </div>
+                                                    <p class="form__error">Please enter this field correctly</p>
+                                                </div>
+                                            </div>
+                                            <!-- Form row 3 -->
+                                            <div class="form__row">
+                                                <div class="form__group">
+                                                    <label for="cvv" class="form__label form__label--medium">CVV</label>
+                                                    <div class="form__text-input">
+                                                        <input
+                                                            type="text"
+                                                            name=""
+                                                            id="cvv"
+                                                            class="form__input"
+                                                            placeholder="123"
+                                                            required
+                                                        />
+                                                        <img
+                                                            src="./assets/icons/form-error.svg"
+                                                            alt=""
+                                                            class="form__input-error-icon"
+                                                        />
+                                                    </div>
+                                                    <p class="form__error">Please enter this field correctly</p>
+                                                </div>
+                                                <div class="form__group">
+                                                    <label for="phone-number" class="form__label form__label--medium"
+                                                        >Phone Number</label
+                                                    >
+                                                    <div class="form__text-input">
+                                                        <input
+                                                            type="text"
+                                                            name=""
+                                                            id="phone-number"
+                                                            class="form__input"
+                                                            placeholder="017"
+                                                            required
+                                                        />
+                                                        <img
+                                                            src="./assets/icons/form-error.svg"
+                                                            alt=""
+                                                            class="form__input-error-icon"
+                                                        />
+                                                    </div>
+                                                    <p class="form__error">Please enter this field correctly</p>
+                                                </div>
+                                            </div>
+                                            <div class="form__group">
+                                                <label
+                                                    for="set-as-default-card"
+                                                    class="form__label form__label--medium form-card__label"
+                                                    >Phone Number</label
+                                                >
+                                                <label class="form__checkbox">
+                                                    <input
+                                                        type="checkbox"
+                                                        name=""
+                                                        id="set-as-default-card"
+                                                        class="form__checkbox-input d-none"
+                                                        checked
+                                                    />
+                                                    <span class="form__checkbox-label">Set as default card</span>
+                                                </label>
+                                            </div>
+                                            <div class="form-card__bottom">
+                                                <a href="./profile.html" class="btn btn--text">Cancel</a>
+                                                <button class="btn btn--primary btn--rounded">Save Card</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer id="footer" class="footer"></footer>
+        <script>
+            load("#footer", "./templates/footer.html");
+        </script>
+
+        <!-- Modal: confirm remove shopping cart item -->
+        <div id="confirm-delete" class="modal modal--small hide">
+            <!-- <button class="modal__close">&times;</button> -->
+            <div class="modal__content">
+                <p class="modal__text">Do you want to remove this item in the shopping cart?</p>
+                <div class="modal__bottom">
+                    <button class="btn btn--outline btn--small modal__btn js-toggle" toggle-target="#confirm-delete">
+                        Cancel
+                    </button>
+                    <button
+                        class="btn btn--primary btn--danger btn--small btn--no-margin modal__btn js-toggle"
+                        toggle-target="#confirm-delete"
+                    >
+                        Delete
+                    </button>
+                </div>
+            </div>
+            <div class="modal__overlay js-toggle" toggle-target="#confirm-delete"></div>
+        </div>
+    </body>
+</html>
